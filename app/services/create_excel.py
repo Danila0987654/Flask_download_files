@@ -24,7 +24,7 @@ def excel():
     col = 0
 
     # Iterate over the data and write it out row by row.
-    for item, cost in (expenses):
+    for item, cost in expenses:
         worksheet.write(row, col, item)
         worksheet.write(row, col + 1, cost)
         row += 1
@@ -36,3 +36,7 @@ def excel():
     workbook.close()
 
     return file_name
+
+# def download(file_name):
+#     path
+
