@@ -22,4 +22,5 @@ def export_excel():
 @bp.route('/download_file/')
 def download_file():
     filename = request.args['filename']
-    return filename
+    # return filename
+    return send_file(filename, mimetype='text/xlsx', as_attachment=True)
