@@ -11,12 +11,15 @@ def main():
     return render_template('base.html')
 
 
-@bp.route('/create_excel/', methods=['POST'])
+@bp.route('/create_excel/', methods=['POST', 'GET'])
 def export_excel():
-    filename = excel()
-    return redirect(url_for('main.download_file'))
+    if request.method == 'POST':
+        filename = excel()
+        return redirect(url_for('main.download_file', filename=filename))
+    return "Test"
 
 
 @bp.route('/download_file/')
 def download_file():
-    return 'filename'
+    filename = request.args['filename']
+    return filename
