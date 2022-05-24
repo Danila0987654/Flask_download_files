@@ -26,6 +26,7 @@ PORT=
 FLASK_ENV=
 DEBUG=
 SECRET_KEY=
+DATA_DIR=
 ```
 
 Create venv, activate and update pip
