@@ -20,6 +20,8 @@ cd Flask_download_files
 
 Create file .env and put with your value this:
 
+But create folder in project, not in app, which you input in DATA_DIR  
+
 ```bash
 HOST=
 PORT=
