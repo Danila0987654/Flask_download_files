@@ -1,7 +1,7 @@
 
-# AppsFyer Postback
+# Test project for download files from flask
 
-Output postbacks from AppsFyer in dashboard for clients
+That's project for understand how download file
 
 
 ## Run application
