@@ -5,6 +5,9 @@ $(".export_excel").click(function() {
     let for_download = {
         'Test': {
             'first': 'first'
+        },
+        'Test2': {
+            'second': 'second'
         }
     };
 

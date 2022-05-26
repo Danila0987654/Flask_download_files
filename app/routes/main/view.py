@@ -1,4 +1,5 @@
 from flask import render_template, request, redirect, send_file, url_for
+import json
 
 from app.routes.main import bp
 from app.services.create_excel import excel
@@ -13,10 +14,8 @@ def main():
 
 @bp.route('/create_excel/', methods=['POST', 'GET'])
 def export_excel():
-    if request.method == 'POST':
-        filename = excel()
-        return redirect(url_for('main.download_file', filename=filename))
-    return "Test"
+    filename = excel()
+    return redirect(url_for('main.download_file', filename=filename))
 
 
 @bp.route('/download_file/')
