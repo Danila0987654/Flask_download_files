@@ -14,12 +14,18 @@ def main():
 
 @bp.route('/create_excel/', methods=['POST', 'GET'])
 def export_excel():
-    filename = excel()
-    return redirect(url_for('main.download_file', filename=filename))
+    if request.method == 'POST':
+        print(request.json['Test'])
+        filename = excel()
+        return filename
+    else:
+        way = request.args.get('way')
+        print(way)
+        return send_file(way, mimetype='text/xlsx', as_attachment=True)
 
 
-@bp.route('/download_file/')
-def download_file():
-    filename = request.args['filename']
-    # return filename
-    return send_file(filename, mimetype='text/xlsx', as_attachment=True)
+# @bp.route('/download_file/')
+# def download_file():
+#     filename = request.args['filename']
+#     # return filename
+#     return send_file(filename, mimetype='text/xlsx', as_attachment=True)

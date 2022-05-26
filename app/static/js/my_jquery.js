@@ -18,6 +18,9 @@ $(".export_excel").click(function() {
         contentType: "application/json; charset=utf-8",
         async: false
     }).done((response) => {
-        console.log("preparing")
+        var param = "/create_excel?";
+        param += "way=" + response;
+        console.log(param)
+        $("a[id='export']").attr('href', param);
     });
 });
